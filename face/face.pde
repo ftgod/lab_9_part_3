@@ -1,26 +1,53 @@
+int x, y;
 void setup() {
   size(500, 500);
   background(255, 255, 255);
 }
 
+
 void draw() {
-  // face
+  drawFace(200,200);
+  drawFace(x,y);
+}
+
+
+
+void drawFace(int x, int y) {
   fill(0, 200, 100);
-  ellipse(250, 250, 150, 150);  
+  ellipse(x, y, 150, 150);  
   
   // eyes
   fill(255, 255, 255);
-  ellipse(275, 230, 25, 50); 
-  ellipse(225, 230, 25, 50);  
+  ellipse(x + 25, y - 20, 25, 50); 
+  ellipse(x - 25, y - 20, 25, 50);  
   
   // eyeballs
   fill(0, 0, 0);
-  ellipse(275, 235, 15, 30); 
-  ellipse(225, 235, 15, 30); 
+  ellipse(x + 25, y - 15, 15, 30); 
+  ellipse(x - 25, y - 15, 15, 30); 
 
-  // worried mouth
+  // mouth
   fill(255, 255, 255);
-  ellipse(250, 290, 70, 20);
+  ellipse(x, y + 40, 70, 20);
+  
 }
+
+void keyPressed() {
+  if(keyCode ==  UP) {
+    y = y - 5;
+  }
+  if(keyCode == DOWN){
+    y = y + 5;
+  }
+  if(keyCode == RIGHT) {
+    x = x + 5;
+}
+if(keyCode == LEFT) {
+x = x - 5;
+}
+
+}
+
+
 
 
